@@ -26,4 +26,4 @@ Train the model - python train.py
 
 Real time emotional recognition - python detect_emotions.py
 
-(The program will creat a window to display the scene capture by webcamera and a window representing the probabilities of detected emotions.)
+(The program will creat a window to display the scene capture by webcamera and a window representing the detected emotions.)
