@@ -38,7 +38,7 @@ while True:
         # Extract the facial key point of the face from the grayscale image, resize it to a fixed 64x64 pixels(pre-trained model shape)
         # the facial for classification via the CNN
         facial = gray[Y:Y + H, X:X + W]
-        facial = cv2.resize(facial, (64, 64))                  #if you trained with yr own model, change (48 x 48) 
+        facial = cv2.resize(facial, (64, 64))                  #if you want to use with yr own trained model,change into (48 x 48) 
         facial = facial.astype("float") / 255.0
         facial = img_to_array(facial)
         facial = np.expand_dims(facial, axis=0)
