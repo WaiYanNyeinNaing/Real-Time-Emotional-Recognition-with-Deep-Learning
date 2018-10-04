@@ -9,7 +9,7 @@ image_size=(48,48)
 def load_fer2013():
         data = pd.read_csv(dataset_path)
         pixels = data['pixels'].tolist()
-        width, height = 64, 64
+        width, height = 48, 48
         faces = []
         for pixel_sequence in pixels:
             face = [int(pixel) for pixel in pixel_sequence.split(' ')]
