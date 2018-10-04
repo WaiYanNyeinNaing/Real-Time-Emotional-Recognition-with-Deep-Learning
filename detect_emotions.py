@@ -9,7 +9,7 @@ import pyaudio
 
 # parameters for loading data and images
 detection_model_path = 'haarcascade/haarcascade_frontalface_default.xml'
-emotion_model_path = 'pretrained_models/cnn.hdf5'
+emotion_model_path = 'pretrained_models/cnn.hdf5'                               #pre-trained model
 
 # hyper-parameters for bounding boxes shape
 # loading models
@@ -35,10 +35,10 @@ while True:
         key=lambda x: (x[2] - x[0]) * (x[3] - x[1]))[0]
         (X, Y, W, H) = faces
 
-        # Extract the facial key point of the face from the grayscale image, resize it to a fixed 64x64 pixels, and then prepare
+        # Extract the facial key point of the face from the grayscale image, resize it to a fixed 64x64 pixels(pre-trained model shape)
         # the facial for classification via the CNN
         facial = gray[Y:Y + H, X:X + W]
-        facial = cv2.resize(facial, (64, 64))
+        facial = cv2.resize(facial, (64, 64))                  #if you trained with yr own model, change (48 x 48) 
         facial = facial.astype("float") / 255.0
         facial = img_to_array(facial)
         facial = np.expand_dims(facial, axis=0)
