@@ -35,7 +35,7 @@ while True:
         key=lambda x: (x[2] - x[0]) * (x[3] - x[1]))[0]
         (X, Y, W, H) = faces
 
-        # Extract the facial key point of the face from the grayscale image, resize it to a fixed 28x28 pixels, and then prepare
+        # Extract the facial key point of the face from the grayscale image, resize it to a fixed 64x64 pixels, and then prepare
         # the facial for classification via the CNN
         facial = gray[Y:Y + H, X:X + W]
         facial = cv2.resize(facial, (64, 64))
