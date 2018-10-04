@@ -4,7 +4,7 @@ import numpy as np
 
 
 dataset_path = 'face_dataset/fer2013.csv'
-image_size=(48,48)
+image_size=(64,64)
 
 def load_fer2013():
         data = pd.read_csv(dataset_path)
